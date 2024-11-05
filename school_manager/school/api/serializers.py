@@ -21,7 +21,7 @@ from school.models import (
 class EducationOrganizationSerializer(serializers.ModelSerializer):
     class Meta:
         model = EducationOrganization
-        fields = ['id', 'name', 'gender', 'year_of_foundation', 'school_type', 'education_level']
+        fields = ['id', 'name', 'description' ,'gender', 'year_of_foundation', 'school_type', 'education_level']
 
 class StudentSerializer(serializers.ModelSerializer):
     class Meta:
