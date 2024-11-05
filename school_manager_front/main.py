@@ -2,111 +2,91 @@ import tkinter as tk
 from tkinter import ttk
 import requests
 import json
+import api_call
+
+#### immature way ###
 
 # url = "http://127.0.0.1:8000/"
 
-organization_url = "http://127.0.0.1:8000/education-organization"
-students_url  = "http://127.0.0.1:8000/student"
-teachers_url = "http://127.0.0.1:8000/teacher"
-masters_url = "http://127.0.0.1:8000/master"
-class_rooms_url = "http://127.0.0.1:8000/class-room"
-high_students_url = "http://127.0.0.1:8000/high-student"
-college_students_url = "http://127.0.0.1:8000/college-student"
-elementaries_url = "http://127.0.0.1:8000/elementary"
-first_highs_url = "http://127.0.0.1:8000/first-high"
-second_highs_url = "http://127.0.0.1:8000/second-high"
-colleges_url = "http://127.0.0.1:8000/college"
-snacks_url = "http://127.0.0.1:8000/shop"
-vending_machines_url = "http://127.0.0.1:8000/snack"
-shops_url = "http://127.0.0.1:8000/vending-machine"
-
-# organization_url = "https://aliconday98.pythonanywhere.com/education-organization"
-# students_url  = "https://aliconday98.pythonanywhere.com/student"
-# teachers_url = "https://aliconday98.pythonanywhere.com/teacher"
-# masters_url = "https://aliconday98.pythonanywhere.com/master"
-# class_rooms_url = "https://aliconday98.pythonanywhere.com/class-room"
-# high_students_url = "https://aliconday98.pythonanywhere.com/high-student"
-# college_students_url = "https://aliconday98.pythonanywhere.com/college-student"
-# elementaries_url = "https://aliconday98.pythonanywhere.com/elementary"
-# first_highs_url = "https://aliconday98.pythonanywhere.com/first-high"
-# second_highs_url = "https://aliconday98.pythonanywhere.com/second-high"
-# colleges_url = "https://aliconday98.pythonanywhere.com/college"
-# snacks_url = "https://aliconday98.pythonanywhere.com/shop"
-# vending_machines_url = "https://aliconday98.pythonanywhere.com/snack"
-# shops_url = "https://aliconday98.pythonanywhere.com/vending-machine"
-
-payload = {}
-headers = {}
-
-organization_response = requests.request("GET", organization_url, headers=headers, data=payload)
-students_response = requests.request("GET", students_url, headers=headers, data=payload)
-teachers_response = requests.request("GET", teachers_url, headers=headers, data=payload)
-masters_response = requests.request("GET", masters_url, headers=headers, data=payload)
-class_rooms_response = requests.request("GET", class_rooms_url, headers=headers, data=payload)
-high_students_response = requests.request("GET", high_students_url, headers=headers, data=payload)
-college_students_response = requests.request("GET", college_students_url, headers=headers, data=payload)
-elementaries_response = requests.request("GET", elementaries_url, headers=headers, data=payload)
-first_highs_response = requests.request("GET", first_highs_url, headers=headers, data=payload)
-second_highs_response = requests.request("GET", second_highs_url, headers=headers, data=payload)
-colleges_response = requests.request("GET", colleges_url, headers=headers, data=payload)
-snacks_response = requests.request("GET", snacks_url, headers=headers, data=payload)
-vending_machines_response = requests.request("GET", vending_machines_url, headers=headers, data=payload)
-shops_response = requests.request("GET", shops_url, headers=headers, data=payload)
-
-# print(response.text)
-
-organizations_res = json.loads(organization_response.text)
-import pdb;pdb.set_trace()
-organizations = organizations_res['data']
-import pdb;pdb.set_trace()
-students_res = json.loads(students_response.text)
-students = students_res['data']
-teachers_res = json.loads(teachers_response.text)
-teachers = teachers_res['data']
-masters_res = json.loads(masters_response.text)
-masters = masters_res['data']
-class_rooms_res = json.loads(class_rooms_response.text)
-class_rooms = class_rooms_res['data']
-high_students_res = json.loads(high_students_response.text)
-high_students = high_students_res['data']
-college_students_res = json.loads(college_students_response.text)
-college_students = college_students_res['data']
-elementaries_res = json.loads(elementaries_response.text)
-elementaries = elementaries_res['data']
-first_highs_res = json.loads(first_highs_response.text)
-first_highs = first_highs_res['data']
-second_highs_res = json.loads(second_highs_response.text)
-second_highs = second_highs_res['data']
-colleges_res = json.loads(colleges_response.text)
-colleges= colleges_res['data']
-snacks_res = json.loads(snacks_response.text)
-snacks = snacks_res['data']
-vending_machines_res = json.loads(vending_machines_response.text)
-vending_machines = vending_machines_res['data']
-shops_res = json.loads(shops_response.text)
-shops = shops_res['data']
+# organization_url = "http://127.0.0.1:8000/education-organization"
+# students_url  = "http://127.0.0.1:8000/student"
+# teachers_url = "http://127.0.0.1:8000/teacher"
+# masters_url = "http://127.0.0.1:8000/master"
+# class_rooms_url = "http://127.0.0.1:8000/class-room"
+# high_students_url = "http://127.0.0.1:8000/high-student"
+# college_students_url = "http://127.0.0.1:8000/college-student"
+# elementaries_url = "http://127.0.0.1:8000/elementary"
+# first_highs_url = "http://127.0.0.1:8000/first-high"
+# second_highs_url = "http://127.0.0.1:8000/second-high"
+# colleges_url = "http://127.0.0.1:8000/college"
+# snacks_url = "http://127.0.0.1:8000/shop"
+# vending_machines_url = "http://127.0.0.1:8000/snack"
+# shops_url = "http://127.0.0.1:8000/vending-machine"
 
 
+# payload = {}
+# headers = {}
 
-# مدل‌های فرضی با داده‌های نمونه
-# students = [
-#     {"first_name": "Alice", "last_name": "Smith", "has_school_bus": True, "grade": "A"},
-#     {"first_name": "Bob", "last_name": "Jones", "has_school_bus": False, "grade": "B"},
-#     {"first_name": "Charlie", "last_name": "Brown", "has_school_bus": True, "grade": "A"},
-# ]
+# organization_response = requests.request("GET", organization_url, headers=headers, data=payload)
+# students_response = requests.request("GET", students_url, headers=headers, data=payload)
+# teachers_response = requests.request("GET", teachers_url, headers=headers, data=payload)
+# masters_response = requests.request("GET", masters_url, headers=headers, data=payload)
+# class_rooms_response = requests.request("GET", class_rooms_url, headers=headers, data=payload)
+# high_students_response = requests.request("GET", high_students_url, headers=headers, data=payload)
+# college_students_response = requests.request("GET", college_students_url, headers=headers, data=payload)
+# elementaries_response = requests.request("GET", elementaries_url, headers=headers, data=payload)
+# first_highs_response = requests.request("GET", first_highs_url, headers=headers, data=payload)
+# second_highs_response = requests.request("GET", second_highs_url, headers=headers, data=payload)
+# colleges_response = requests.request("GET", colleges_url, headers=headers, data=payload)
+# snacks_response = requests.request("GET", snacks_url, headers=headers, data=payload)
+# vending_machines_response = requests.request("GET", vending_machines_url, headers=headers, data=payload)
+# shops_response = requests.request("GET", shops_url, headers=headers, data=payload)
 
-# high_students = [
-#     {"first_name": "Dave", "last_name": "Davis", "has_school_bus": False, "grade": "10", "major": "Science"},
-#     {"first_name": "Eve", "last_name": "Evans", "has_school_bus": True, "grade": "11", "major": "Arts"},
-# ]
+# # print(response.text)
 
-# college_students = [
-#     {"first_name": "Fay", "last_name": "Johnson", "student_id": 123, "has_dorm": True, "grade": "Sophomore", "education_type": "Full-Time", "major": "CS", "sub_major": "AI"},
-# ]
+# organizations_res = json.loads(organization_response.text)
+# organizations = organizations_res['data']
+# students_res = json.loads(students_response.text)
+# students = students_res['data']
+# teachers_res = json.loads(teachers_response.text)
+# teachers = teachers_res['data']
+# masters_res = json.loads(masters_response.text)
+# masters = masters_res['data']
+# class_rooms_res = json.loads(class_rooms_response.text)
+# class_rooms = class_rooms_res['data']
+# high_students_res = json.loads(high_students_response.text)
+# high_students = high_students_res['data']
+# college_students_res = json.loads(college_students_response.text)
+# college_students = college_students_res['data']
+# elementaries_res = json.loads(elementaries_response.text)
+# elementaries = elementaries_res['data']
+# first_highs_res = json.loads(first_highs_response.text)
+# first_highs = first_highs_res['data']
+# second_highs_res = json.loads(second_highs_response.text)
+# second_highs = second_highs_res['data']
+# colleges_res = json.loads(colleges_response.text)
+# colleges= colleges_res['data']
+# snacks_res = json.loads(snacks_response.text)
+# snacks = snacks_res['data']
+# vending_machines_res = json.loads(vending_machines_response.text)
+# vending_machines = vending_machines_res['data']
+# shops_res = json.loads(shops_response.text)
+# shops = shops_res['data']
 
-# teachers = [
-#     {"first_name": "Grace", "last_name": "Williams", "salary_per_day": 100, "working_days": 20},
-# ]
+organizations = api_call.get_edu_organ_api()
+teachers = api_call.get_teacher_api()
+masters = api_call.get_master_api()
+students = api_call.get_student_api()
+high_students = api_call.get_high_student_api()
+college_students = api_call.get_college_student_api()
+elementaries = api_call.get_elementary_api()
+first_highs = api_call.get_first_high_api()
+second_highs = api_call.get_second_high_api()
+colleges = api_call.get_college_api()
+class_rooms = api_call.get_class_room_api()
+snacks = api_call.get_snack_api()
+vending_machines = api_call.get_vending_machine_api()
+shops = api_call.get_shop_api()
 
 # ایجاد پنجره اصلی
 root = tk.Tk()
