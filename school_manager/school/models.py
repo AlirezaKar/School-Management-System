@@ -142,11 +142,3 @@ class VendingMachine(models.Model):
 
     def __str__(self):
         return str(self.shopkeeper)
-    
-# class Grade(models.Model):
-#     name = models.CharField(max_length=10, null=True)
-#     class_rooms = models.ManyToManyField(ClassRoom)
-
-#     def __str__(self):
-#         return self.name
-    
