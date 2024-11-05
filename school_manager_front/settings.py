@@ -1,1 +1,1 @@
-DOMAIN = 'https://aliconday98.pythonanywhere.com '
+DOMAIN = 'https://aliconday98.pythonanywhere.com'
