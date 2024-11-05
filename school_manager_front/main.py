@@ -20,6 +20,21 @@ snacks_url = "http://127.0.0.1:8000/shop"
 vending_machines_url = "http://127.0.0.1:8000/snack"
 shops_url = "http://127.0.0.1:8000/vending-machine"
 
+# organization_url = "https://aliconday98.pythonanywhere.com/education-organization"
+# students_url  = "https://aliconday98.pythonanywhere.com/student"
+# teachers_url = "https://aliconday98.pythonanywhere.com/teacher"
+# masters_url = "https://aliconday98.pythonanywhere.com/master"
+# class_rooms_url = "https://aliconday98.pythonanywhere.com/class-room"
+# high_students_url = "https://aliconday98.pythonanywhere.com/high-student"
+# college_students_url = "https://aliconday98.pythonanywhere.com/college-student"
+# elementaries_url = "https://aliconday98.pythonanywhere.com/elementary"
+# first_highs_url = "https://aliconday98.pythonanywhere.com/first-high"
+# second_highs_url = "https://aliconday98.pythonanywhere.com/second-high"
+# colleges_url = "https://aliconday98.pythonanywhere.com/college"
+# snacks_url = "https://aliconday98.pythonanywhere.com/shop"
+# vending_machines_url = "https://aliconday98.pythonanywhere.com/snack"
+# shops_url = "https://aliconday98.pythonanywhere.com/vending-machine"
+
 payload = {}
 headers = {}
 
