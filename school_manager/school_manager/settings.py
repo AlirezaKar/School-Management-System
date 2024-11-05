@@ -130,4 +130,4 @@ MEDIA_URL = '/media/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-ALLOWED_HOSTS = ['aliconday98.pythonanywhere.com/', '127.0.0.1']
+ALLOWED_HOSTS = ['aliconday98.pythonanywhere.com', '127.0.0.1']
