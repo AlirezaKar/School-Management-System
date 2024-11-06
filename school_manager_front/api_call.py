@@ -2,6 +2,8 @@ import settings
 import requests
 import json
 
+
+
 def get_edu_organ_api():
     organization_url = settings.DOMAIN + "/education-organization"
     payload = {}

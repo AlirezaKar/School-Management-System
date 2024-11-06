@@ -78,7 +78,7 @@ class ElementarySerializer(serializers.ModelSerializer):
 
     def get_students(self, obj):
         return StudentSerializer(obj.students.all(), many=True).data
-    
+
     def get_teachers(self, obj):
         return TeacherSerializer(obj.teachers.all(), many=True).data
     
