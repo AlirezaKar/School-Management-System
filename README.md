@@ -43,10 +43,10 @@ env\Scripts\activate
 source env/bin/activate
 
 3. Install dependencies:
-# if you're a developer:
+# for developers:
 pip install -r requirements.txt
 pip install -r requirements.dev.txt
-# if you're a end-user:
+# for end-users:
 pip install -r requirements.txt
 
 4. Run database migrations
