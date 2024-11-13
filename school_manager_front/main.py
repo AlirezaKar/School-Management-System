@@ -19,6 +19,7 @@ snacks = api_call.get_snack_api()
 vending_machines = api_call.get_vending_machine_api()
 shops = api_call.get_shop_api()
 
+
 # ایجاد پنجره اصلی
 root = tk.Tk()
 root.title("Model Browser")
@@ -83,6 +84,7 @@ models = [
 for i, (model_name, objects, fields) in enumerate(models):
     button = tk.Button(root, text=model_name, command=lambda m=model_name, o=objects, f=fields: open_model_window(m, o, f))
     button.grid(row=i//2, column=i%2, padx=10, pady=5)
+
 
 # اجرای برنامه
 root.mainloop()
