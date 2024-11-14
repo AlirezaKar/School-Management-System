@@ -21,9 +21,9 @@ their list of every data required to be kept track of
 - [tkinter]: Has also a tkinter front 
 
 ## Technologies Used
-- Python (3.12)**
-- Django (5.1.2)**
-- REST framework**
+- Python (3.12)
+- Django (5.1.2)
+- REST framework
 
 ## Setup Instructions 
 
@@ -36,28 +36,43 @@ cd school-management-system
 ```
 
 2. Create a virtual environment and activate it:
+```bash
 python -m venv env
-# on Windows: 
+```
+
+** on Windows: ** 
+```bash
 env\Scripts\activate
-# on Linux:
+```
+
+** on Linux: **
+```bash
 source env/bin/activate
+```
 
 3. Install dependencies:
 # for developers:
+```bash
 pip install -r requirements.txt
 pip install -r requirements.dev.txt
+```
 # for end-users:
+```bash
 pip install -r requirements.txt
-
+```
 4. Run database migrations
+```bash
 python manage.py migrate
-
+```
 5. start the development server
+```bash
 python manage.py runserver
-
+```
 ## Usage
 
-- Visit http://127.0.0.1:8000 or https://aliconday98.pythonanywhere.com/ to access the app 
+- Visit http://127.0.0.1:8000 to access the app 
+
+- Online demo (available until Wednesday 05 February 2025)
 # for developers 
 - To access the admin area: python manage.py createsuperuser 
 
