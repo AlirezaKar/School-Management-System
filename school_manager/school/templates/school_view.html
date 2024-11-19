@@ -1,0 +1,16 @@
+{% extends '_base.html' %}
+{% block title %} SCHOOL {% endblock %}
+{% block content %}
+
+<h1 align="center">SCHOOLS</h1><br>
+{% for item in elementaries %}
+<div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">{{item.grade}}</h5>
+      <p class="card-text">{{item.grade}}</p>
+      <a href="{% url 'school_detail_view' elementaries.pk%}" class="btn btn-primary">Go somewhere</a>
+    </div>
+  </div>
+{% endfor %}
+
+{% endblock %}

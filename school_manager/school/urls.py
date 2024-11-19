@@ -1,20 +1,24 @@
 from django.urls import path
-from school.views import (my_api_view, 
-                          home,
-                          education_organization_view,
-                          student_view,
-                          teacher_view,
-                          master_view,
-                          class_room_view,
-                          high_student_view,
-                          college_student_view,
-                          elementary_view,
-                          first_high_view,
-                          second_high_view,
-                          college_view,
-                          snack_view,
-                          vending_machine_view,
-                          shop_view,
+from school.views import (
+                        homepage,
+                        school_view,
+                        SchoolDetailView,
+                        my_api_view, 
+                        into,
+                        education_organization_view,
+                        student_view,
+                        teacher_view,
+                        master_view,
+                        class_room_view,
+                        high_student_view,
+                        college_student_view,
+                        elementary_view,
+                        first_high_view,
+                        second_high_view,
+                        college_view,
+                        snack_view,
+                        vending_machine_view,
+                        shop_view,
                           )
 
 from rest_framework import permissions
@@ -37,8 +41,13 @@ schema_view = get_schema_view(
 )
 
 urlpatterns = [
-    path('', home, name='home'),
+    # local 
+    path('into/', into, name='into'),
+    path('', homepage, name='homepage'),
+    path('school/', school_view, name='school_view'),
+    path('<int:pk>/', SchoolDetailView.as_view(), name='school_detail_view'),
     path('api/', my_api_view, name='my_api_view'),
+    # api rest
     path('education-organization/', education_organization_view, name='education_organization_view'),
     path('student/', student_view, name='student_view'),
     path('teacher/', teacher_view, name='teacher_view'),
@@ -53,6 +62,7 @@ urlpatterns = [
     path('shop/', shop_view, name='shop_view'),
     path('snack/', snack_view, name='snack_view'),
     path('vending-machine/', vending_machine_view, name='vending_machine_view'),
+    # api drf-yasg
     path('swagger<format>/', schema_view.without_ui(cache_timeout=0), name='schema-json'),
     path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
     path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),

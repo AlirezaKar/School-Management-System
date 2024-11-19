@@ -35,11 +35,32 @@ from school.api.serializers import (
         ShopSerializer,
         VendingMachineSerializer,
 )
+from django.views.generic import View, DetailView
 
-def home(request):
+
+def into(request):
     return render(request, 'home.html')
 
+def homepage(request):
+    return render(request, 'homepage.html', {})
 
+def school_view(request):
+    elementaries = Elementary.objects.all()
+    first_highs = FirstHigh.objects.all()
+    second_highs = SecondHigh.objects.all()
+    
+    data = {
+        'elementaries': elementaries,
+        'first_highs': first_highs,
+        'second_highs': second_highs,
+    }
+    return render(request, 'school_view.html', {'data':data})
+
+class SchoolDetailView(DetailView):
+    model = Elementary, FirstHigh, SecondHigh
+    template_name = 'school_detail_view.html'
+
+    
 def my_api_view(request):  
     return JsonResponse({'text':"hello world"})
 
