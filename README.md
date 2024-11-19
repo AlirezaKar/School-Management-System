@@ -73,6 +73,10 @@ python manage.py runserver
 - Visit http://127.0.0.1:8000 to access the app 
 
 - Online demo (available until Wednesday 05 February 2025)
+![alt text](https://github.com/AlirezaKar/school-management-system/online-demo/main/swagger1.jpg?raw=true)
+![alt text](https://github.com/AlirezaKar/school-management-system/online-demo/main/swagger2.jpg?raw=true)
+![alt text](https://github.com/AlirezaKar/school-management-system/online-demo/main/redoc.jpg?raw=true)
+
 # for developers 
 - To access the admin area: python manage.py createsuperuser 
 
